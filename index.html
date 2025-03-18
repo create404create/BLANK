@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisible Tab</title>
+    <style>
+        body {
+            display: none; /* Page ko invisible karein */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // JavaScript code for tab toggle logic
+        let isVisible = false;
+
+        function toggleVisibility() {
+            isVisible = !isVisible;
+            document.body.style.display = isVisible ? "block" : "none";
+        }
+
+        // Button create karein
+        const button = document.createElement("button");
+        button.textContent = "Toggle Tab Visibility";
+        button.style.position = "fixed";
+        button.style.top = "10px";
+        button.style.right = "10px";
+        button.style.zIndex = 1000;
+        button.onclick = toggleVisibility;
+
+        document.body.appendChild(button);
+    </script>
+</body>
+</html>
